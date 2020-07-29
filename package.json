@@ -1,0 +1,16 @@
+{
+  "name": "appointments",
+  "version": "1.0.0",
+  "description": "Appointments system",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "tdd",
+    "react",
+    "jest"
+  ],
+  "author": "Daniel Irvine",
+  "license": "ISC"
+}

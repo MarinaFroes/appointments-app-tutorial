@@ -12,5 +12,8 @@
     "jest"
   ],
   "author": "Daniel Irvine",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
 }

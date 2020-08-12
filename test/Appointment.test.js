@@ -34,8 +34,14 @@ describe('AppointmentsDayView', () => {
   let container;
   const today = new Date();
   const appointments = [
-    { startsAt: today.setHours(12, 0) },
-    { startsAt: today.setHours(13, 0) }
+    {
+      startsAt: today.setHours(12, 0),
+      customer: { firstName: 'Ashley' }
+    },
+    {
+      startsAt: today.setHours(13, 0),
+      customer: { firstName: 'Jordan' }
+    }
   ];
 
   beforeEach(() => {
@@ -67,5 +73,10 @@ describe('AppointmentsDayView', () => {
   it('initially shows a message saying there are no appointments today', () => {
     render(<AppointmentsDayView appointments={[]} />);
     expect(container.textContent).toMatch('There are no appointments scheduled for today.');
+  });
+
+  it('selects the first appointment by default', () => {
+    render(<AppointmentsDayView appointments={appointments} />);
+    expect(container.textContent).toMatch('Ashley');
   });
 });

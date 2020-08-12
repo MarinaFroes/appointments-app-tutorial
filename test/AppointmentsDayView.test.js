@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Appointment } from '../src/Appointment';
-import { AppointmentsDayView } from '../src/Appointment';
+import { Appointment } from '../src/AppointmentsDayView';
+import { AppointmentsDayView } from '../src/AppointmentsDayView';
 import ReactTestUtils from 'react-dom/test-utils';
 
 describe('Appointment', () => {

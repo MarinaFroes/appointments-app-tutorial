@@ -5,8 +5,6 @@ This app was created by following the tutorial available on the book **Mastering
 
 You can check how to install and run it and the references and resources for this tutorial on the [README](./README.md) file. Here I will share some notes about the tutorial and my conclusions.
 
-## Table of contents 
-
 ## Table of Contents  
 - [First steps with TDD](#first-steps-with-TDD)  
 
@@ -58,7 +56,7 @@ This chapter contains the items bellow:
   - Create a container: `const container = document.createElement('div')`;
   - Replace an existing DOM node (container) with the rendered node tree (component): `ReactDOM.render(component,container)`;
 
-- Steps for testing:
+- red-green-refactor cycle:
   - Write a failing test;
   - Make it pass: write the simplest thing to pass the test;
   - Refactor using DRY principle;

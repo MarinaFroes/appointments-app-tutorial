@@ -21,18 +21,20 @@ My goal is to learn TDD in React and you can check my notes about this tutorial 
 
 ## How to install and run it
 
-> I'll include this instructions after finishing the application
-<!-- - Download the files, cd into root directory and run:
+- Download the files, cd into root directory and run:
 ```bash
 # Install dependencies
 $ npm install
+
+# Build the app
+$ npm run build
 
 # Run the app
 $ npm start
 
 # Run the tests
 $ npm test
-```   -->
+```  
 
 ## Reference
 

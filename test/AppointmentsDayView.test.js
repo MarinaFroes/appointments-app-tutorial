@@ -53,6 +53,14 @@ describe('Appointment', () => {
     
     expect(container.textContent).toMatch('Andrea Kuhl');
   });
+
+  it('renders service', () => {
+    customer = { service: 'Beard Trim' };
+
+    render(<Appointment customer={customer} />);
+    
+    expect(container.textContent).toMatch('Beard Trim');
+  });
 });
 
 describe('AppointmentsDayView', () => {

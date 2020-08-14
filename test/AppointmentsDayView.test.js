@@ -45,6 +45,14 @@ describe('Appointment', () => {
     
     expect(container.textContent).toMatch('+49 1512 9999999');
   });
+
+  it('renders stylist', () => {
+    customer = { stylist: 'Andrea Kuhl' };
+
+    render(<Appointment customer={customer} />);
+    
+    expect(container.textContent).toMatch('Andrea Kuhl');
+  });
 });
 
 describe('AppointmentsDayView', () => {

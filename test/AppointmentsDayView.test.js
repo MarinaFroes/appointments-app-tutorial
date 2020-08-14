@@ -61,6 +61,14 @@ describe('Appointment', () => {
     
     expect(container.textContent).toMatch('Beard Trim');
   });
+
+  it('renders notes', () => {
+    customer = { notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel lacinia risus, eget efficitur diam.' };
+
+    render(<Appointment customer={customer} />);
+    
+    expect(container.textContent).toMatch('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel lacinia risus, eget efficitur diam.');
+  });
 });
 
 describe('AppointmentsDayView', () => {

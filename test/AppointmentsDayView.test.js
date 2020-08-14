@@ -26,15 +26,15 @@ describe('Appointment', () => {
 
     render(<Appointment customer={customer} />);
 
-    expect(container.textContent).toMatch('Ashley');
+    expect(appointmentTable().textContent).toMatch('Ashley');
   });
 
-  it('renders another customer name', () => {
+  it('renders another customer first name', () => {
     customer = { firstName: 'Jordan' };
 
     render(<Appointment customer={customer} />);
 
-    expect(container.textContent).toMatch('Jordan');
+    expect(appointmentTable().textContent).toMatch('Jordan');
   });
 
   it('renders customer last name', () => {
@@ -42,7 +42,15 @@ describe('Appointment', () => {
 
     render(<Appointment customer={customer} />);
     
-    expect(container.textContent).toMatch('Smith');
+    expect(appointmentTable().textContent).toMatch('Smith');
+  });
+
+  it('renders another customer last name', () => {
+    customer = { lastName: 'Jones' };
+
+    render(<Appointment customer={customer} />);
+    
+    expect(appointmentTable().textContent).toMatch('Jones');
   });
 
   it('renders customer phone number', () => {
@@ -50,15 +58,31 @@ describe('Appointment', () => {
 
     render(<Appointment customer={customer} />);
     
-    expect(container.textContent).toMatch('+49 1512 9999999');
+    expect(appointmentTable().textContent).toMatch('+49 1512 9999999');
   });
 
-  it('renders stylist', () => {
+  it('renders another customer phone number', () => {
+    customer = { phoneNumber: '+49 1512 8888888' };
+
+    render(<Appointment customer={customer} />);
+    
+    expect(appointmentTable().textContent).toMatch('+49 1512 8888888');
+  });
+
+  it('renders stylist name', () => {
     customer = { stylist: 'Andrea Kuhl' };
 
     render(<Appointment customer={customer} />);
     
-    expect(container.textContent).toMatch('Andrea Kuhl');
+    expect(appointmentTable().textContent).toMatch('Andrea Kuhl');
+  });
+
+  it('renders another stylist name', () => {
+    customer = { stylist: 'Jo' };
+
+    render(<Appointment customer={customer} />);
+    
+    expect(appointmentTable().textContent).toMatch('Jo');
   });
 
   it('renders service', () => {
@@ -66,15 +90,31 @@ describe('Appointment', () => {
 
     render(<Appointment customer={customer} />);
     
-    expect(container.textContent).toMatch('Beard Trim');
+    expect(appointmentTable().textContent).toMatch('Beard Trim');
   });
 
-  it('renders notes', () => {
+  it('renders another service', () => {
+    customer = { service: 'Blow-dry' };
+
+    render(<Appointment customer={customer} />);
+    
+    expect(appointmentTable().textContent).toMatch('Blow-dry');
+  });
+
+  it('renders appointiment notes', () => {
     customer = { notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel lacinia risus, eget efficitur diam.' };
 
     render(<Appointment customer={customer} />);
     
-    expect(container.textContent).toMatch('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel lacinia risus, eget efficitur diam.');
+    expect(appointmentTable().textContent).toMatch('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel lacinia risus, eget efficitur diam.');
+  });
+
+  it('renders other appointiment notes', () => {
+    customer = { notes: 'Vivamus vel lacinia risus, eget efficitur diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit.' };
+
+    render(<Appointment customer={customer} />);
+    
+    expect(appointmentTable().textContent).toMatch('Vivamus vel lacinia risus, eget efficitur diam.Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
   });
 
   it('renders a heading with the time', () => {
@@ -83,7 +123,8 @@ describe('Appointment', () => {
 
     render(<Appointment customer={customer} startsAt={timestamp}/>);
     
-    expect(container.textContent).toMatch(`Today's appointment at 09:00`);
+    expect(container.querySelector('h3')).not.toBeNull();
+    expect(container.querySelector('h3').textContent).toEqual(`Today's appointment at 09:00`);
   });
 });
 

@@ -6,13 +6,20 @@ import ReactTestUtils from 'react-dom/test-utils';
 
 describe('Appointment', () => {
   let container;
-  let customer;
+  let customer = {};
 
   beforeEach(() => {
     container = document.createElement('div');
   })
 
   const render = component => ReactDOM.render(component, container);
+
+  const appointmentTable = () => container.querySelector('#appointmentView > table');
+
+  it('renders a table', () => {
+    render(<Appointment customer={customer} />);
+    expect(appointmentTable()).not.toBeNull();
+  });
 
   it('renders the customer first name', () => {
     customer = { firstName: 'Ashley' };

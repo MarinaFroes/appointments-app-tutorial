@@ -5,7 +5,16 @@ const appointmentTimeOfDay = startsAt => {
   return `${h}:${m}`;
 }
 
-export const Appointment = ({ customer }) => <div>{customer.firstName}</div>;
+export const Appointment = ({ customer }) => (
+  <table>
+    <tbody>
+      <tr>
+        <td>Customer</td>
+        <td>{customer.firstName} {customer.lastName}</td>
+      </tr>
+    </tbody>
+  </table>
+);
 
 export const AppointmentsDayView = ({ appointments }) => {
   const [selectedAppointment, setSelectedAppointment] = useState(0);

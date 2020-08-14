@@ -36,7 +36,15 @@ describe('Appointment', () => {
     render(<Appointment customer={customer} />);
     
     expect(container.textContent).toMatch('Smith');
-  })
+  });
+
+  it('renders customer phone number', () => {
+    customer = { phoneNumber: '+49 1512 9999999' };
+
+    render(<Appointment customer={customer} />);
+    
+    expect(container.textContent).toMatch('+49 1512 9999999');
+  });
 });
 
 describe('AppointmentsDayView', () => {

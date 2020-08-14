@@ -69,6 +69,15 @@ describe('Appointment', () => {
     
     expect(container.textContent).toMatch('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel lacinia risus, eget efficitur diam.');
   });
+
+  it('renders a heading with the time', () => {
+    const today = new Date();
+    const timestamp = today.setHours(9, 0, 0);
+
+    render(<Appointment customer={customer} startsAt={timestamp}/>);
+    
+    expect(container.textContent).toMatch(`Today's appointment at 09:00`);
+  });
 });
 
 describe('AppointmentsDayView', () => {

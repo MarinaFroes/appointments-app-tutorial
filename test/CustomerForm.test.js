@@ -15,7 +15,7 @@ describe('CustomerForm', () => {
     expect(formElement).not.toBeNull();
     expect(formElement.tagName).toEqual('INPUT');
     expect(formElement.type).toEqual('text');
-  }
+  };
   
   it('renders a form', () => {
     render(<CustomerForm />);
@@ -28,5 +28,11 @@ describe('CustomerForm', () => {
 
     const field = form('customer').elements.firstName;
     expectToBeInputFieldOfTypeText(field);
+  });
+
+  it('includes the existing value for the first name', () => {
+    render(<CustomerForm firstName="Ashley" />);
+    const field = form('customer').elements.firstName;
+    expect(field.value).toEqual('Ashley');
   });
 });

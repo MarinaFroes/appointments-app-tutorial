@@ -28,13 +28,12 @@ describe('CustomerForm', () => {
   it('renders the first name field as a text box', () => {
     render(<CustomerForm />);
 
-    const field = firstNameField();
-    expectToBeInputFieldOfTypeText(field);
+    expectToBeInputFieldOfTypeText(firstNameField());
   });
 
   it('includes the existing value for the first name', () => {
     render(<CustomerForm firstName="Ashley" />);
-    const field = firstNameField();
-    expect(field.value).toEqual('Ashley');
+
+    expect(firstNameField().value).toEqual('Ashley');
   });
 });
